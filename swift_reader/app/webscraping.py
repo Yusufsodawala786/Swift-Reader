@@ -22,7 +22,9 @@ def getNews(category):
         content = requests.get(newsarticle.get("url")).content
         soup = BeautifulSoup(content,"html.parser")
         richtext = soup.find("div",{"class":"richtext"})
-        p = richtext.findChildren("p",recursive=False)
+        p=[]
+        if richtext:
+            p = richtext.findChildren("p",recursive=False) 
         entire_text = ''
         for el in p:
             entire_text+=el.text.strip()

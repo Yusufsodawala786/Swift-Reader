@@ -1,0 +1,20 @@
+.dashboard{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+img{
+    max-width: 100%;
+}
+.logo{
+    cursor: pointer;
+}
+.Box-container{
+    padding-top: 1rem;
+    display: flex;
+    background-color: #1f1f1f;
+    width: 100%;
+    min-height: 90vh;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: space-evenly;
+}

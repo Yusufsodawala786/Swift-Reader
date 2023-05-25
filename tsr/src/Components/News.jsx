@@ -4,18 +4,20 @@ import axios from 'axios'
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useLocation } from 'react-router-dom'
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { Stack } from '@mui/material';
+import SelectCategory from './SelectCategory';
+// import Card from '@mui/material/Card';
+// import CardActions from '@mui/material/CardActions';
+// import CardContent from '@mui/material/CardContent';
+// import CardMedia from '@mui/material/CardMedia';
+// import Button from '@mui/material/Button';
+// import Typography from '@mui/material/Typography';
+// import { Stack } from '@mui/material';
 export default function News() {
   const [isLoading, setIsLoading] = useState(true)
   const [news, setNews] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const location = useLocation()
+  console.log(location)
   const category = location.state.category
   useEffect(()=>{
     (async () =>{
@@ -64,7 +66,10 @@ const handleRight = () =>{
         {
             !isLoading?
             <>
+            <SelectCategory/>
+            <div className='news-box'>
             <button className='nav-buttons' onClick={handleLeft}> {`<`} </button>
+            <div className='container'>
             <div className='card'>
                 <div className='card-image'><img src={news[currentIndex].imageURL} alt="" /></div>
                 <div className='card-details'>
@@ -73,7 +78,9 @@ const handleRight = () =>{
                     <div className="card-url"><a href={news[currentIndex].contentURL}>Read Detailed News</a></div>
                 </div>
             </div>
+            </div>
             <button className='nav-buttons' onClick={handleRight}> {`>`} </button>
+            </div>
             </>
             :""
         }

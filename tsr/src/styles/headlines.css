@@ -1,0 +1,10 @@
+.Box-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+    gap: 0.8rem;
+    padding: 10px;
+    height: 79vh;
+    background-color: #1f1f1f;
+}

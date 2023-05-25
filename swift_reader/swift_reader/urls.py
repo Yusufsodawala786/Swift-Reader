@@ -16,8 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include,re_path
 from app.views import *
-
+from app import views
 urlpatterns = [
-    path('getSummary',ReactView.as_view(),name="summary"),
+    re_path(r'^api/app/$',views.news_list),
+    path('homepage/',home_page_news),
+    path('update/',updateDB),
+    # path('getSummary',ReactView.as_view(),name="summary"),
     path('admin/', admin.site.urls),
+    path('',homepage)
 ]

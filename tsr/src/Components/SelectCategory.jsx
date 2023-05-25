@@ -13,8 +13,10 @@ export default function SelectCategory() {
     }
   return (
     <main>
-        <span>Select News Category</span>
-        <div className='news-categories'>
+        <div className='logo'>
+            <img src={require('../logo.png')} alt="logo" className='image'/>
+        </div>
+        <div className='categories'>
         <button value="Business" onClick={(e)=>{submit(e)}}>Business</button>
         <button value="Entertainment" onClick={(e)=>{submit(e)}}>Entertainment</button>
         <button value="India" onClick={(e)=>{submit(e)}}>India</button>

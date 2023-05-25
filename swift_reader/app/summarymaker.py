@@ -3,8 +3,6 @@ import time
 from transformers import pipeline
 import os
 import bs4 as bs
-import urllib.request
-import re
 
 ## Setting to use the 0th GPU
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
