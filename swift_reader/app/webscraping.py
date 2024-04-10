@@ -9,10 +9,8 @@ subscription_key = os.getenv('API_KEY')
 search_url = os.getenv('ENDPOINT')
 
 def getNews(category):
-
     headers = {"Ocp-Apim-Subscription-Key" : subscription_key}
     params  = {"cc":"IN","category":category,"textDecorations": True, "textFormat": "HTML"}
-
     response = requests.get(search_url, headers=headers, params=params)
     response.raise_for_status()
 

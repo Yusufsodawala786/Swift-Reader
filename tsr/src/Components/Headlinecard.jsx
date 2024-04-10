@@ -102,7 +102,7 @@ export default function Headline({headline,imageURL,summary,contentURL}) {
             !isLink?
             <>
                 <div className="card-url-box" ><a href={contentURL} className='a'>Read Detailed News</a>
-                <button onClick={(e)=>{create(e)}}>Share</button>
+                <button className='share-button' onClick={(e)=>{create(e)}}>Share</button>
                 </div>
             </>:
             <>
@@ -116,20 +116,6 @@ export default function Headline({headline,imageURL,summary,contentURL}) {
             </p>
         </div>
         </ReactCardFlip>
-        <div className='Headline-Box share-card' style={{display:"none"}}>
-        <div className='News-card'>
-           
-                <div className='image-box'><img src={imageURL} alt="image" /></div>
-                <div className="news-Headline" >{headline}</div>
-        
-        </div>
-        <div  className='summary-box'>
-            <p>
-                {summary}
-            </p>
-        </div>
-
-        </div>
     </>
     )
 }
